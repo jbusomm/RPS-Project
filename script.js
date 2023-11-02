@@ -1,5 +1,14 @@
 function getComputerChoice(min , max) {
-    return Math.floor(Math.random() * (max - min + 1) + min); 
+    let compChoice = Math.floor(Math.random() * (max - min + 1) + min);
+    if (compChoice === 1 ) {
+        return "rock"
+    } else if (compChoice === 2) {
+        return "paper"
+    } else if (compChoice === 3) {
+        return "scissors"
+    } else {
+        return null
+    }
 }
 
 function getPlayerChoice() {
@@ -10,11 +19,10 @@ function getPlayerChoice() {
 
 const computerSelection = getComputerChoice(1 , 3)
 const playerSelection = getPlayerChoice()
-console.log(playerSelection)
 function playRound(playerSelection , computerSelection) {
     switch (playerSelection) {
         case "rock":
-            return console.log("checkers")
+            if (computerSelection === "paper")
     }
 }
 
