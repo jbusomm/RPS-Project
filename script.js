@@ -47,7 +47,7 @@ function playRound(playerSelection , computerSelection) {
         case "scissors":
             if (computerSelection === "rock") {
                 compScore++
-                return console.log("You lose. Rock beats .")
+                return console.log("You lose. Rock beats scissors.")
             } else if (computerSelection === "paper") {
                 playerScore++
                 return console.log("You Win! Scissors beats paper.")
