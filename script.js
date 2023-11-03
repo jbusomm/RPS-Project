@@ -61,10 +61,13 @@ function playRound(playerSelection , computerSelection) {
 }
 
 function game() {
-    while (playerScore != 3 || compScore != 3) {
+    while (playerScore < 3 && compScore < 3) {
     const computerSelection = getComputerChoice(1 , 3)
     const playerSelection = getPlayerChoice()
+    console.warn("New round!")
     playRound(playerSelection , computerSelection)
+    console.log("Computer current score: " + compScore)
+    console.log("Player current score: " + playerScore)
     }
     if (playerScore === 3) {
         return alert("Game Over! You win!!!")
@@ -72,3 +75,5 @@ function game() {
         return alert("Game Over! You lose...")
     }
 }
+
+game()
