@@ -32,10 +32,11 @@ function playRound(playerSelection, computerSelection) {
     case "rock":
       if (computerSelection === "paper") {
         ++compScore;
-        currentRound.textContent = "You Lose. Paper beats Rock.";
+        currentRound.textContent = "You've lost this round. Paper beats Rock.";
       } else if (computerSelection === "scissors") {
         ++playerScore;
-        currentRound.textContent = "You win! Rock beats scissors.";
+        currentRound.textContent =
+          "You've won this round! Rock beats scissors.";
       } else if (computerSelection === "rock") {
         currentRound.textContent = "It's a tie! Rocks bump each other!";
       }
@@ -43,10 +44,11 @@ function playRound(playerSelection, computerSelection) {
     case "paper":
       if (computerSelection === "rock") {
         ++playerScore;
-        currentRound.textContent = "You Win! Paper beats Rock.";
+        currentRound.textContent = "You've won this round! Paper beats Rock.";
       } else if (computerSelection === "scissors") {
         ++compScore;
-        currentRound.textContent = "You lose. Scissors beats paper.";
+        currentRound.textContent =
+          "You've lost this round. Scissors beats paper.";
       } else if (computerSelection === "paper") {
         currentRound.textContent =
           "It's a tie! Papers just become one and nothing happens!";
@@ -55,10 +57,12 @@ function playRound(playerSelection, computerSelection) {
     case "scissors":
       if (computerSelection === "rock") {
         ++compScore;
-        currentRound.textContent = "You lose. Rock beats scissors.";
+        currentRound.textContent =
+          "You've lost this round. Rock beats scissors.";
       } else if (computerSelection === "paper") {
         ++playerScore;
-        currentRound.textContent = "You Win! Scissors beats paper.";
+        currentRound.textContent =
+          "You've won this round! Scissors beats paper.";
       } else if (computerSelection === "scissors") {
         currentRound.textContent = "It's a tie! Scissors just jam each other!";
       }
@@ -79,9 +83,9 @@ function game(player, computer) {
   playerDisplay.textContent = playerScore;
   compDisplay.textContent = compScore;
   if (player === 5) {
-    gameWinner.textContent = "Game Over! You win!!!";
+    gameWinner.textContent = "Game Over! You've won this round!!!";
   } else if (computer === 5) {
-    gameWinner.textContent = "Game Over! You lose.";
+    gameWinner.textContent = "Game Over! You've lost this round.";
   }
 }
 
