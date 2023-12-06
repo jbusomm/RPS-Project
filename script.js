@@ -4,6 +4,7 @@ const chooseScissors = document.querySelector(".scissorsBtn");
 const playerDisplay = document.querySelector(".playerSpan");
 const compDisplay = document.querySelector(".compSpan");
 const gameWinner = document.querySelector(".gameWinner");
+const currentRound = document.querySelector(".currentRound");
 
 function getComputerChoice(min, max) {
   let compChoice = Math.floor(Math.random() * (max - min + 1) + min);
@@ -31,36 +32,35 @@ function playRound(playerSelection, computerSelection) {
     case "rock":
       if (computerSelection === "paper") {
         ++compScore;
-        return console.log("You Lose. Paper beats Rock.");
+        currentRound.textContent = "You Lose. Paper beats Rock.";
       } else if (computerSelection === "scissors") {
         ++playerScore;
-        return console.log("You win! Rock beats scissors.");
+        currentRound.textContent = "You win! Rock beats scissors.";
       } else if (computerSelection === "rock") {
-        return console.log("It's a tie! Rocks bump each other!");
+        currentRound.textContent = "It's a tie! Rocks bump each other!";
       }
       break;
     case "paper":
       if (computerSelection === "rock") {
         ++playerScore;
-        return console.log("You Win! Paper beats Rock.");
+        currentRound.textContent = "You Win! Paper beats Rock.";
       } else if (computerSelection === "scissors") {
         ++compScore;
-        return console.log("You lose. Scissors beats paper.");
+        currentRound.textContent = "You lose. Scissors beats paper.";
       } else if (computerSelection === "paper") {
-        return console.log(
-          "It's a tie! Papers just become one and nothing happens!"
-        );
+        currentRound.textContent =
+          "It's a tie! Papers just become one and nothing happens!";
       }
       break;
     case "scissors":
       if (computerSelection === "rock") {
         ++compScore;
-        return console.log("You lose. Rock beats scissors.");
+        currentRound.textContent = "You lose. Rock beats scissors.";
       } else if (computerSelection === "paper") {
         ++playerScore;
-        return console.log("You Win! Scissors beats paper.");
+        currentRound.textContent = "You Win! Scissors beats paper.";
       } else if (computerSelection === "scissors") {
-        return console.log("It's a tie! Scissors just jam each other!");
+        currentRound.textContent = "It's a tie! Scissors just jam each other!";
       }
       break;
     default:
