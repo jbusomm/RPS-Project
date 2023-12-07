@@ -83,9 +83,9 @@ function game(player, computer) {
   playerDisplay.textContent = playerScore;
   compDisplay.textContent = compScore;
   if (player === 5) {
-    gameWinner.textContent = "Game Over! You've won this round!!!";
+    gameWinner.textContent = "Game Over! You've won!!!";
   } else if (computer === 5) {
-    gameWinner.textContent = "Game Over! You've lost this round.";
+    gameWinner.textContent = "Game Over! You've lost.";
   }
 }
 
